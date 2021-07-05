@@ -1,0 +1,82 @@
+<style>
+  td {
+    padding: 10px;
+  }
+
+  table {
+    border-spacing: 10px;
+    border-collapse: separate;
+  }
+  .tt{
+   margin: 5%; 
+  }
+
+</style>
+<div class="title-group">
+  <h1 class="mat-h1">Employee Leave Stats</h1>
+  <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+<div class="container" *ngIf="employeeLeaves.length > 0">
+ 
+  <div class="mat-elevation-z8">
+<table>
+  <tr>
+    <td>Total Yearly Leaves = 30</td>
+    <td>Total Annual leaves = 20</td>
+    <td>Total Casual leaves = 10</td>
+    
+  </tr>
+  <tr>
+    <td>Remaining Yearly Leaves </td>
+    <td>Remaining Annual leaves </td>
+    <td>Remaining Casual leaves </td>
+  </tr>
+  <tr *ngFor="let employeeLeave of employeeLeaves; let i=index ">
+    <td >{{employeeLeave.yearlyLeaves}}</td>
+    <td >{{employeeLeave.annaulLeaves}}</td>
+    <td >{{employeeLeave.casualLeaves}}</td>
+    <!-- <td>  <input type="submit" value="Mark This Assignment" (click)="onClick(assignment._id)"> </td> -->
+  </tr>
+  <tr>
+    <td>Yearly Leaves left </td>
+    <td>Annual leaves left </td>
+    <td>Casual leaves left</td>
+  </tr>
+  <tr *ngFor="let employeeLeave of employeeLeaves; let i=index ">
+    
+    <td >{{30-employeeLeave.yearlyLeaves}}</td>
+    <td >{{20-employeeLeave.annaulLeaves}}</td>
+    <td >{{10-employeeLeave.casualLeaves}}</td>
+    <!-- <td>  <input type="submit" value="Mark This Assignment" (click)="onClick(assignment._id)"> </td> -->
+  </tr>
+</table>
+</div>
+</div>
+<div class="tt"></div>
+
+<!-- *ngIf="submissions[0].studentname" -->
+<!-- <div class="container" *ngIf="assignments.length > 0">
+ 
+  <div class="mat-elevation-z8">
+<table *ngIf="submission[0].studentname">
+  <tr>
+    <td>No.</td>
+    <td>Student Name</td>
+    <td>File Name</td>
+    <td>Submitted At</td>
+    <td>Add Marks</td>
+  </tr>
+  <tr *ngFor="let submit of submission; let i=index">
+    <td>{{i+1}}</td>
+    <td>{{submit.studentname}}</td>
+    <td>{{submit.filename}}</td>
+    <td>{{submit.submitted_at}}</td>
+    <td>
+      <input type="text" [(ngModel)]="submit.marks">
+      <br>
+      <input type="submit" (click)="updateMarks($event, submit.marks, submit._id)">
+    </td>
+  </tr>
+</table>
+</div>
+</div> -->
